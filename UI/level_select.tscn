@@ -1,0 +1,179 @@
+[gd_scene load_steps=2 format=3 uid="uid://bioe6a0eanshe"]
+
+[ext_resource type="Script" path="res://UI/level_select.gd" id="1_sspqj"]
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sspqj")
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -27.5
+offset_right = 22.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_set_1" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="level_1-1" type="Button" parent="BoxContainer/level_set_1"]
+layout_mode = 2
+text = "1-1"
+
+[node name="level_1-2" type="Button" parent="BoxContainer/level_set_1"]
+layout_mode = 2
+text = "1-2"
+
+[node name="level_1-3" type="Button" parent="BoxContainer/level_set_1"]
+layout_mode = 2
+text = "1-3"
+
+[node name="level_1-4" type="Button" parent="BoxContainer/level_set_1"]
+layout_mode = 2
+text = "1-4"
+
+[node name="level_1-5" type="Button" parent="BoxContainer/level_set_1"]
+layout_mode = 2
+text = "1-5"
+
+[node name="level_set_2" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="level_2-1" type="Button" parent="BoxContainer/level_set_2"]
+layout_mode = 2
+text = "2-1"
+
+[node name="level_2-2" type="Button" parent="BoxContainer/level_set_2"]
+layout_mode = 2
+text = "2-2"
+
+[node name="level_2-3" type="Button" parent="BoxContainer/level_set_2"]
+layout_mode = 2
+text = "2-3"
+
+[node name="level_2-4" type="Button" parent="BoxContainer/level_set_2"]
+layout_mode = 2
+text = "2-4"
+
+[node name="level_2-5" type="Button" parent="BoxContainer/level_set_2"]
+layout_mode = 2
+text = "2-5"
+
+[node name="level_set_3" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="level_3-1" type="Button" parent="BoxContainer/level_set_3"]
+layout_mode = 2
+text = "3-1"
+
+[node name="level_3-2" type="Button" parent="BoxContainer/level_set_3"]
+layout_mode = 2
+text = "3-2"
+
+[node name="level_3-3" type="Button" parent="BoxContainer/level_set_3"]
+layout_mode = 2
+text = "3-3"
+
+[node name="level_3-4" type="Button" parent="BoxContainer/level_set_3"]
+layout_mode = 2
+text = "3-4"
+
+[node name="level_3-5" type="Button" parent="BoxContainer/level_set_3"]
+layout_mode = 2
+text = "3-5"
+
+[node name="level_set_4" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="level_4-1" type="Button" parent="BoxContainer/level_set_4"]
+layout_mode = 2
+text = "4-1"
+
+[node name="level_4-2" type="Button" parent="BoxContainer/level_set_4"]
+layout_mode = 2
+text = "4-2"
+
+[node name="level_4-3" type="Button" parent="BoxContainer/level_set_4"]
+layout_mode = 2
+text = "4-3"
+
+[node name="level_4-4" type="Button" parent="BoxContainer/level_set_4"]
+layout_mode = 2
+text = "4-4"
+
+[node name="level_4-5" type="Button" parent="BoxContainer/level_set_4"]
+layout_mode = 2
+text = "4-5"
+
+[node name="level_set_5" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="level_5-1" type="Button" parent="BoxContainer/level_set_5"]
+layout_mode = 2
+text = "5-1"
+
+[node name="level_5-2" type="Button" parent="BoxContainer/level_set_5"]
+layout_mode = 2
+text = "5-2"
+
+[node name="level_5-3" type="Button" parent="BoxContainer/level_set_5"]
+layout_mode = 2
+text = "5-3"
+
+[node name="level_5-4" type="Button" parent="BoxContainer/level_set_5"]
+layout_mode = 2
+text = "5-4"
+
+[node name="level_5-5" type="Button" parent="BoxContainer/level_set_5"]
+layout_mode = 2
+text = "5-5"
+
+[node name="level_set_6" type="HBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="level_6-1" type="Button" parent="BoxContainer/level_set_6"]
+layout_mode = 2
+text = "6-1"
+
+[node name="level_6-2" type="Button" parent="BoxContainer/level_set_6"]
+layout_mode = 2
+text = "6-2"
+
+[node name="level_6-3" type="Button" parent="BoxContainer/level_set_6"]
+layout_mode = 2
+text = "6-3"
+
+[node name="level_6-4" type="Button" parent="BoxContainer/level_set_6"]
+layout_mode = 2
+text = "6-4"
+
+[node name="level_6-5" type="Button" parent="BoxContainer/level_set_6"]
+layout_mode = 2
+text = "6-5"
+
+[node name="back_button" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1164.0
+offset_bottom = 653.0
+mouse_filter = 2
+color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[connection signal="pressed" from="BoxContainer/level_set_1/level_1-1" to="." method="_on_level_11_pressed"]
+[connection signal="pressed" from="BoxContainer/back_button" to="." method="_on_back_button_pressed"]

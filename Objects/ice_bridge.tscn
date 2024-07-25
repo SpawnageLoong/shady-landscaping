@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b43oycmrnl47u"]
+
+[ext_resource type="Script" path="res://Objects/ice_bridge.gd" id="1_pq6mp"]
+[ext_resource type="Texture2D" uid="uid://cjx4yuj0q7yhi" path="res://Art/Original Assets/ice.png" id="2_bmhkk"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="2_bp1f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pdxq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8wx7"]
+size = Vector2(8, 8)
+
+[node name="ice_bridge" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_pq6mp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+texture = ExtResource("2_bmhkk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4pdxq")
+
+[node name="interaction_area" parent="." instance=ExtResource("2_bp1f8")]
+action_name = "freeze"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_e8wx7")

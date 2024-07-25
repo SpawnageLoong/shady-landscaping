@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://ccfcwh1ns8k53"]
+
+[ext_resource type="Script" path="res://Objects/spikes.gd" id="1_a42n4"]
+[ext_resource type="Texture2D" uid="uid://cdn0e1c4cdphh" path="res://Art/Original Assets/spikes.png" id="2_sokud"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="3_wcgqu"]
+[ext_resource type="PackedScene" uid="uid://ce1fh5p5uecpk" path="res://Objects/area_detection_area.tscn" id="4_iyrs8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab07k"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n7op"]
+size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqhtw"]
+atlas = ExtResource("2_sokud")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh2pe"]
+atlas = ExtResource("2_sokud")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mbtt"]
+atlas = ExtResource("2_sokud")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caxjt"]
+atlas = ExtResource("2_sokud")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5xqt"]
+atlas = ExtResource("2_sokud")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lxf4"]
+atlas = ExtResource("2_sokud")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_185ox"]
+atlas = ExtResource("2_sokud")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmmwr"]
+atlas = ExtResource("2_sokud")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs62w"]
+atlas = ExtResource("2_sokud")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7njt"]
+atlas = ExtResource("2_sokud")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up5qd"]
+atlas = ExtResource("2_sokud")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb87c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqhtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh2pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mbtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caxjt")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5xqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lxf4")
+}],
+"loop": true,
+"name": &"idle_big",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_185ox")
+}],
+"loop": true,
+"name": &"idle_small",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmmwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs62w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7njt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up5qd")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 5.0
+}]
+
+[node name="spikes" type="StaticBody2D" groups=["objects"]]
+z_index = -5
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_a42n4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ab07k")
+
+[node name="shadow_detection_area" parent="." instance=ExtResource("4_iyrs8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow_detection_area"]
+visible = false
+shape = SubResource("RectangleShape2D_0n7op")
+
+[node name="shadow_manager" parent="." instance=ExtResource("3_wcgqu")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nb87c")
+animation = &"shrink"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

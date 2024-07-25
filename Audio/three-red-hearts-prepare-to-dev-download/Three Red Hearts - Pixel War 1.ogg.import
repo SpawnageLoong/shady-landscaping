@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cludbg47b62u5"
+path="res://.godot/imported/Three Red Hearts - Pixel War 1.ogg-e8d99f47fafe38ef9810b18ecf08e135.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/three-red-hearts-prepare-to-dev-download/Three Red Hearts - Pixel War 1.ogg"
+dest_files=["res://.godot/imported/Three Red Hearts - Pixel War 1.ogg-e8d99f47fafe38ef9810b18ecf08e135.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

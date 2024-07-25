@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://u0gohqlobfgw"]
+
+[ext_resource type="Script" path="res://Objects/goal.gd" id="1_fndop"]
+[ext_resource type="Texture2D" uid="uid://by0yvk0p5j14d" path="res://Art/Sunnyside_World_Assets/Tileset/goal.png" id="2_a8ek2"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="3_er413"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="3_o2tf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk6lm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x65kx"]
+
+[node name="goal" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_fndop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_nk6lm")
+
+[node name="interaction_area" parent="." instance=ExtResource("3_er413")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_x65kx")
+
+[node name="shadow_manager" parent="." instance=ExtResource("3_o2tf1")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_a8ek2")
+hframes = 2

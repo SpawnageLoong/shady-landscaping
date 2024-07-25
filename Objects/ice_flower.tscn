@@ -1,0 +1,142 @@
+[gd_scene load_steps=21 format=3 uid="uid://lumaak7hxhjk"]
+
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="1_g5sng"]
+[ext_resource type="Script" path="res://Objects/ice_flower.gd" id="1_ymxw6"]
+[ext_resource type="Texture2D" uid="uid://dbvbyktwya3sy" path="res://Art/Pixel Mushrooms/mushrooms_objects.png" id="2_it6mt"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="4_kvjiw"]
+[ext_resource type="PackedScene" uid="uid://d4cgodc4kpknp" path="res://Objects/shadow_detector.tscn" id="6_dbg1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohe5m"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spq3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5h3e"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u85nx"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5gjs"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfihj"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjffg"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttg6m"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okta4"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3t6l"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05wnm"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prgbm"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uggw"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6470"]
+atlas = ExtResource("2_it6mt")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uoijl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5h3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u85nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5gjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfihj")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjffg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttg6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okta4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3t6l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05wnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prgbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uggw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6470")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 5.0
+}]
+
+[node name="ice_flower" type="StaticBody2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_ymxw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ohe5m")
+
+[node name="interaction_area" parent="." instance=ExtResource("1_g5sng")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_spq3p")
+
+[node name="shadow_detector" parent="." instance=ExtResource("6_dbg1j")]
+visible = false
+
+[node name="shadow_manager" parent="." instance=ExtResource("4_kvjiw")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uoijl")
+animation = &"idle"
+frame_progress = 0.509313
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

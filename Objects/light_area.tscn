@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://6b4gnqagoxba"]
+
+[ext_resource type="Script" path="res://Objects/light_area.gd" id="1_iqy83"]
+[ext_resource type="Texture2D" uid="uid://cviytrkmd8tbu" path="res://Art/Temporary Assets/dir_light.png" id="2_vd3e7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2pmd"]
+size = Vector2(1, 1)
+
+[node name="light_area" type="Area2D"]
+scale = Vector2(30, 68)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_iqy83")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vd3e7")
+offset = Vector2(0, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_l2pmd")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4cgodc4kpknp"]
+
+[ext_resource type="Script" path="res://Objects/shadow_detector.gd" id="1_7iblw"]
+[ext_resource type="PackedScene" uid="uid://ce1fh5p5uecpk" path="res://Objects/area_detection_area.tscn" id="2_w3d3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rg4h"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihcu7"]
+size = Vector2(8, 8)
+
+[node name="shadow_detector" type="Node2D"]
+script = ExtResource("1_7iblw")
+
+[node name="shadow_detection_area" parent="." instance=ExtResource("2_w3d3h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow_detection_area"]
+shape = SubResource("RectangleShape2D_6rg4h")
+
+[node name="light_detection_area" parent="." instance=ExtResource("2_w3d3h")]
+target_area_name = "light"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="light_detection_area"]
+shape = SubResource("RectangleShape2D_ihcu7")

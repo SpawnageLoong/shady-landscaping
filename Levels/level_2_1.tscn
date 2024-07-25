@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://nqqgmtuwn86s"]
+
+[ext_resource type="Script" path="res://Levels/level_1_3.gd" id="1_ep0q2"]
+[ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="2_ov3yi"]
+[ext_resource type="PackedScene" uid="uid://u0gohqlobfgw" path="res://Objects/goal.tscn" id="3_0j4wp"]
+[ext_resource type="PackedScene" uid="uid://gbmgi8uods8c" path="res://Characters/player.tscn" id="4_vo4rr"]
+[ext_resource type="PackedScene" uid="uid://hsaorjv2fe00" path="res://UI/sidebar.tscn" id="5_h0ba6"]
+[ext_resource type="PackedScene" uid="uid://ctta0f0jc65x4" path="res://Objects/bush.tscn" id="5_su06n"]
+[ext_resource type="PackedScene" uid="uid://os1xag65gn5b" path="res://Objects/water_gatherable.tscn" id="6_c1h3e"]
+[ext_resource type="PackedScene" uid="uid://b2y4g8onupokq" path="res://Objects/fire_flower.tscn" id="7_6qqx7"]
+[ext_resource type="PackedScene" uid="uid://duraukw71iulu" path="res://Objects/cauldron.tscn" id="9_n0soq"]
+
+[node name="level_2_1" type="Node2D"]
+script = ExtResource("1_ep0q2")
+
+[node name="template_tilemap" parent="." instance=ExtResource("2_ov3yi")]
+layer_1/tile_data = PackedInt32Array(131073, 524292, 3, 196609, 327684, 6, 131074, 262148, 6, 196610, 131076, 1, 131075, 262148, 3, 196611, 65540, 1, 131076, 65540, 1, 196612, 131076, 1, 131077, 131076, 1, 196613, 65540, 1, 131078, 65540, 1, 196614, 131076, 1, 131079, 131076, 1, 196615, 65540, 1, 65544, 131076, 28, 131080, 65540, 1, 196616, 131076, 1, 65545, 196612, 34, 131081, 196612, 29, 196617, 196612, 35, 262152, 65540, 1, 327688, 327684, 4, 393224, 720900, 4, 458760, 327684, 1, 262153, 196612, 29, 327689, 196612, 36, 393225, 786436, 5, 458761, 1245188, 5, 262148, 65540, 1, 327684, 327684, 4, 393220, 131076, 31, 458756, 1310724, 2, 262149, 131076, 1, 327685, 262148, 5, 393221, 131076, 31, 458757, 1376260, 5, 262150, 65540, 1, 327686, 327684, 4, 393222, 720900, 4, 458758, 327684, 1, 262151, 131076, 1, 327687, 65540, 1, 393223, 917508, 4, 458759, 327684, 1, 262145, 393220, 4, 327681, 1572868, 2, 393217, 1572868, 6, 262146, 65540, 1, 327682, 393220, 4, 393218, 1572868, 2, 458754, 1572868, 6, 262147, 131076, 1, 327683, 262148, 5, 393219, 131076, 31, 458755, 1310724, 2, 65540, 524292, 3, 65541, 131076, 34, 65542, 131076, 28, 65543, 131076, 34, 524293, 1376260, 6, 524294, 1310724, 5, 524295, 1310724, 5, 524296, 1310724, 5, 524297, 1245188, 6, 458762, 1376260, 1610612742, 393226, 1310724, 1610612741, 327690, 1310724, 1610612741, 262154, 1310724, 1610612738, 262144, 1310724, 1342177282, 196608, 1310724, 1342177282, 131072, 1376260, 1342177286, 327680, 1572868, 6, 196618, 1310724, 1610612738, 131082, 1245188, 1610612742)
+layer_2/tile_data = PackedInt32Array(131076, 524292, 805306375)
+layer_3/tile_data = PackedInt32Array(131073, 393220, 28)
+
+[node name="goal" parent="." instance=ExtResource("3_0j4wp")]
+position = Vector2(33, 96)
+next_scene = "res://Levels/level_2_2.tscn"
+
+[node name="player" parent="." instance=ExtResource("4_vo4rr")]
+position = Vector2(256, 30)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(228, 128)
+zoom = Vector2(2.105, 2.105)
+
+[node name="bush" parent="." instance=ExtResource("5_su06n")]
+position = Vector2(65, 96)
+
+[node name="water_gatherable3" parent="." instance=ExtResource("6_c1h3e")]
+position = Vector2(192, 256)
+
+[node name="water_gatherable2" parent="." instance=ExtResource("6_c1h3e")]
+position = Vector2(224, 256)
+
+[node name="water_gatherable" parent="." instance=ExtResource("6_c1h3e")]
+position = Vector2(256, 256)
+
+[node name="fire_flower" parent="." instance=ExtResource("7_6qqx7")]
+position = Vector2(160, 155)
+
+[node name="cauldron" parent="." instance=ExtResource("9_n0soq")]
+position = Vector2(160, 64)
+
+[node name="sidebar" parent="." instance=ExtResource("5_h0ba6")]

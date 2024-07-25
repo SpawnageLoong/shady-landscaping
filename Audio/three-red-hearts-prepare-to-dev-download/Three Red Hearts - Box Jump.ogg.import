@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bowtqsxqxi7pp"
+path="res://.godot/imported/Three Red Hearts - Box Jump.ogg-1f82a86b930af40541ced9d762af4a30.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/three-red-hearts-prepare-to-dev-download/Three Red Hearts - Box Jump.ogg"
+dest_files=["res://.godot/imported/Three Red Hearts - Box Jump.ogg-1f82a86b930af40541ced9d762af4a30.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccdt7t3npm1g4"]
+
+[ext_resource type="Script" path="res://Objects/stone.gd" id="1_c5l8f"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="2_e4hyw"]
+[ext_resource type="Texture2D" uid="uid://b8ungotahen8r" path="res://Art/Sunnyside_World_Assets/Tileset/rock.png" id="2_qjkkn"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="4_2vpax"]
+[ext_resource type="AudioStream" uid="uid://cfcnhuad7vbqk" path="res://Audio/push.wav" id="5_icp20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab07k"]
+size = Vector2(28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajl2g"]
+
+[node name="stone" type="CharacterBody2D" groups=["objects"]]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 23
+script = ExtResource("1_c5l8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_ab07k")
+
+[node name="interaction_area" parent="." instance=ExtResource("2_e4hyw")]
+action_name = "push"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_ajl2g")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+collision_mask = 21
+
+[node name="push_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_icp20")
+
+[node name="shadow_manager" parent="." instance=ExtResource("4_2vpax")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.24)
+scale = Vector2(2, 2)
+texture = ExtResource("2_qjkkn")

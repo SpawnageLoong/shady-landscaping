@@ -1,0 +1,193 @@
+[gd_scene load_steps=25 format=3 uid="uid://hsaorjv2fe00"]
+
+[ext_resource type="Script" path="res://UI/sidebar.gd" id="1_4rx4j"]
+[ext_resource type="Texture2D" uid="uid://pgosy4iqynhq" path="res://Art/Pixel Art GUI Elements/sidebar_remixed.png" id="2_rqs8i"]
+[ext_resource type="FontFile" uid="uid://b757x5h1mp6k0" path="res://Art/monogram/ttf/monogram.ttf" id="3_2x87u"]
+[ext_resource type="Texture2D" uid="uid://b7vv080db03oe" path="res://Atlases/restart_button.png" id="3_lg0mg"]
+[ext_resource type="Texture2D" uid="uid://dl3lol1c5icir" path="res://Art/Pixel Art GUI Elements/title_button.png" id="4_jgmxn"]
+[ext_resource type="Texture2D" uid="uid://cai461extu80a" path="res://Atlases/control_buttons.png" id="6_yw3bn"]
+[ext_resource type="Texture2D" uid="uid://xb6ywepkdacu" path="res://Art/Pixel Art GUI Elements/water_bucket.png" id="7_5mktf"]
+[ext_resource type="Texture2D" uid="uid://cuvoxgi05rqxb" path="res://Art/Pixel Art GUI Elements/potions.png" id="8_7d5yk"]
+[ext_resource type="Texture2D" uid="uid://hht6yeks3w4k" path="res://Art/Pixel Mushrooms/mushrooms_items.png" id="9_lnjst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ate2o"]
+atlas = ExtResource("3_lg0mg")
+region = Rect2(4, 4, 46, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yrob"]
+atlas = ExtResource("3_lg0mg")
+region = Rect2(52, 4, 46, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j2al"]
+atlas = ExtResource("4_jgmxn")
+region = Rect2(0, 0, 46, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1lf6"]
+atlas = ExtResource("4_jgmxn")
+region = Rect2(48, 0, 46, 22)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2gip"]
+font = ExtResource("3_2x87u")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1224d"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(4, 4, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1g80"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(40, 4, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdlud"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(4, 29, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5vtv"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(40, 29, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxlep"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(4, 54, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrgjh"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(40, 54, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgp8t"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(4, 79, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifa32"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(40, 79, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cboh0"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(4, 104, 34, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2vup"]
+atlas = ExtResource("6_yw3bn")
+region = Rect2(40, 104, 34, 24)
+
+[node name="sidebar" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rx4j")
+
+[node name="sidebar_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 313.0
+offset_right = 457.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("2_rqs8i")
+
+[node name="restart_button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 335.0
+offset_top = 16.0
+offset_right = 381.0
+offset_bottom = 38.0
+texture_normal = SubResource("AtlasTexture_ate2o")
+texture_pressed = SubResource("AtlasTexture_6yrob")
+
+[node name="menu_button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 389.0
+offset_top = 16.0
+offset_right = 435.0
+offset_bottom = 38.0
+size_flags_horizontal = 3
+texture_normal = SubResource("AtlasTexture_2j2al")
+texture_pressed = SubResource("AtlasTexture_f1lf6")
+
+[node name="level_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 47.0
+offset_right = 432.0
+offset_bottom = 63.0
+text = "Level "
+label_settings = SubResource("LabelSettings_h2gip")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="up_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 192.0
+offset_right = 402.0
+offset_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("AtlasTexture_1224d")
+texture_pressed = SubResource("AtlasTexture_g1g80")
+
+[node name="down_button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 368.0
+offset_top = 219.0
+offset_right = 402.0
+offset_bottom = 243.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("AtlasTexture_jdlud")
+texture_pressed = SubResource("AtlasTexture_x5vtv")
+
+[node name="left_button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 331.0
+offset_top = 219.0
+offset_right = 365.0
+offset_bottom = 243.0
+size_flags_horizontal = 3
+texture_normal = SubResource("AtlasTexture_xxlep")
+texture_pressed = SubResource("AtlasTexture_xrgjh")
+
+[node name="right_button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 405.0
+offset_top = 219.0
+offset_right = 439.0
+offset_bottom = 243.0
+texture_normal = SubResource("AtlasTexture_wgp8t")
+texture_pressed = SubResource("AtlasTexture_ifa32")
+
+[node name="interact_button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 405.0
+offset_top = 192.0
+offset_right = 439.0
+offset_bottom = 216.0
+texture_normal = SubResource("AtlasTexture_cboh0")
+texture_pressed = SubResource("AtlasTexture_l2vup")
+
+[node name="water_icon" type="Sprite2D" parent="."]
+position = Vector2(357, 93)
+texture = ExtResource("7_5mktf")
+hframes = 2
+
+[node name="potion_icon" type="Sprite2D" parent="."]
+position = Vector2(385, 145)
+scale = Vector2(1.4375, 1.34375)
+texture = ExtResource("8_7d5yk")
+hframes = 3
+
+[node name="material_icon" type="Sprite2D" parent="."]
+position = Vector2(414, 92)
+texture = ExtResource("9_lnjst")
+hframes = 3
+
+[connection signal="pressed" from="restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="up_button" to="." method="_on_up_button_pressed"]
+[connection signal="pressed" from="down_button" to="." method="_on_down_button_pressed"]
+[connection signal="pressed" from="left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="right_button" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="interact_button" to="." method="_on_interact_button_pressed"]

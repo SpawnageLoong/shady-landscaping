@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2vgkafbelyvf"]
+
+[ext_resource type="Script" path="res://Objects/linked_lamp.gd" id="1_6lpm7"]
+[ext_resource type="Texture2D" uid="uid://bcn2khk820twh" path="res://Art/Original Assets/Lamp.png" id="2_3bclc"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="3_ej58w"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="4_x5ycd"]
+[ext_resource type="PackedScene" uid="uid://6b4gnqagoxba" path="res://Objects/light_area.tscn" id="5_o8doj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nijh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvfl7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc3cv"]
+atlas = ExtResource("2_3bclc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75xnf"]
+atlas = ExtResource("2_3bclc")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp71x"]
+atlas = ExtResource("2_3bclc")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umkbr"]
+atlas = ExtResource("2_3bclc")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80ed2"]
+atlas = ExtResource("2_3bclc")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qdn1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc3cv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75xnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp71x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umkbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ed2")
+}],
+"loop": true,
+"name": &"idle_lit",
+"speed": 3.0
+}]
+
+[node name="linked_lamp" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_6lpm7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_7nijh")
+
+[node name="interaction_area" parent="." instance=ExtResource("3_ej58w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_hvfl7")
+
+[node name="light_area_left" parent="." instance=ExtResource("5_o8doj")]
+visible = false
+position = Vector2(-11, 0)
+rotation = 1.5708
+
+[node name="light_area_right" parent="." instance=ExtResource("5_o8doj")]
+visible = false
+position = Vector2(11, 0)
+rotation = -1.5708
+
+[node name="light_area_up" parent="." instance=ExtResource("5_o8doj")]
+visible = false
+position = Vector2(0, -11)
+rotation = 3.14159
+
+[node name="light_area_down" parent="." instance=ExtResource("5_o8doj")]
+visible = false
+position = Vector2(0, 11)
+
+[node name="shadow_manager" parent="." instance=ExtResource("4_x5ycd")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qdn1g")
+frame_progress = 1.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = 1.5708
+target_position = Vector2(0, 480)
+collision_mask = 5

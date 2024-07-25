@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3vhqubj01y6i"]
+
+[ext_resource type="Script" path="res://Objects/carpet_area.gd" id="1_igicf"]
+
+[node name="carpet_area" type="Area2D"]
+script = ExtResource("1_igicf")

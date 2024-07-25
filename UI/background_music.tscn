@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0wfudjuffx52"]
+
+[ext_resource type="AudioStream" uid="uid://gnu7tbfpfkvm" path="res://Audio/three-red-hearts-prepare-to-dev-download/Three Red Hearts - Puzzle Pieces.ogg" id="1_74qg1"]
+
+[node name="background_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_74qg1")
+volume_db = -15.0
+autoplay = true

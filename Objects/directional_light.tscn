@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cplne5lxesyuk"]
+
+[ext_resource type="Script" path="res://Objects/directional_light.gd" id="1_mbjyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4t3n"]
+size = Vector2(28, 28)
+
+[node name="directional_light" type="StaticBody2D"]
+script = ExtResource("1_mbjyg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v4t3n")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 1600)
+collision_mask = 5

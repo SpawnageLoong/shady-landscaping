@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=3 uid="uid://dg4umarm0p6rn"]
+
+[ext_resource type="Script" path="res://Levels/level_2_3.gd" id="1_018th"]
+[ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="2_u6jdu"]
+[ext_resource type="PackedScene" uid="uid://u0gohqlobfgw" path="res://Objects/goal.tscn" id="3_xvg1q"]
+[ext_resource type="PackedScene" uid="uid://gbmgi8uods8c" path="res://Characters/player.tscn" id="4_rivvh"]
+[ext_resource type="PackedScene" uid="uid://ctta0f0jc65x4" path="res://Objects/bush.tscn" id="5_bkmm0"]
+[ext_resource type="PackedScene" uid="uid://duraukw71iulu" path="res://Objects/cauldron.tscn" id="7_82ocu"]
+[ext_resource type="PackedScene" uid="uid://b2y4g8onupokq" path="res://Objects/fire_flower.tscn" id="7_e7ax4"]
+[ext_resource type="PackedScene" uid="uid://b43oycmrnl47u" path="res://Objects/ice_bridge.tscn" id="8_vu5v8"]
+[ext_resource type="PackedScene" uid="uid://lumaak7hxhjk" path="res://Objects/ice_flower.tscn" id="9_cj75r"]
+[ext_resource type="PackedScene" uid="uid://ccdt7t3npm1g4" path="res://Objects/stone.tscn" id="10_1x42g"]
+[ext_resource type="PackedScene" uid="uid://hsaorjv2fe00" path="res://UI/sidebar.tscn" id="11_cy8cc"]
+[ext_resource type="PackedScene" uid="uid://ccfcwh1ns8k53" path="res://Objects/spikes.tscn" id="13_h7j65"]
+
+[node name="level_2_3" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_018th")
+level_name = "Level 2-3"
+
+[node name="template_tilemap" parent="." instance=ExtResource("2_u6jdu")]
+layer_1/tile_data = PackedInt32Array()
+layer_3/tile_data = PackedInt32Array(262145, 458756, 1, 262146, 327684, 1, 262147, 589828, 1, 262148, 1638404, 3, 196611, 1245188, 1610612741, 327683, 1245188, 5, 196610, 589828, 1, 327682, 458756, 1, 327681, 1245188, 1342177285, 196609, 327684, 1, 393218, 327684, 1, 131074, 1376260, 805306373, 262144, 1310724, 1342177285, 393219, 1376260, 805306373, 393217, 1310724, 1342177285, 327680, 1245188, 1342177286, 131073, 458756, 1, 65537, 1310724, 805306373, 196612, 1376260, 805306374, 196608, 1310724, 1342177285, 458754, 458756, 1, 458755, 327684, 1, 458756, 524292, 1, 458757, 327684, 1, 458758, 524292, 1, 458753, 1310724, 1342177285, 524290, 1310724, 5, 524291, 1310724, 5, 524292, 1310724, 5, 524293, 1310724, 5, 524294, 1310724, 5, 524289, 1245188, 1342177286, 393220, 1310724, 805306373, 393221, 1310724, 805306373, 393222, 1310724, 805306373, 393223, 1376260, 1342177285, 458759, 327684, 1, 458760, 458756, 1, 393224, 327684, 1, 393225, 589828, 1, 458761, 327684, 1, 262149, 524292, 1, 262150, 327684, 1, 327687, 1245188, 1342177285, 327685, 1310724, 5, 327686, 1310724, 5, 196613, 1245188, 805306373, 131078, 1245188, 805306373, 65543, 1245188, 805306373, 65544, 524292, 1, 65545, 327684, 1, 131081, 589828, 1, 196617, 327684, 1, 262153, 458756, 1, 327689, 327684, 1, 327688, 589828, 1, 262152, 327684, 1, 196616, 524292, 1, 131080, 327684, 1, 131079, 589828, 1, 196615, 327684, 1, 262151, 589828, 1, 196614, 458756, 1, 524295, 1310724, 5, 524296, 1310724, 5, 524297, 1310724, 5, 458762, 1310724, 1610612741, 393226, 1310724, 1610612741, 327690, 1310724, 1610612741, 262154, 1310724, 1610612741, 196618, 1310724, 1610612741, 131082, 1310724, 1610612741, 65546, 1310724, 1610612741, 9, 1310724, 805306373, 8, 1310724, 805306373, 524298, 1376260, 1610612742, 10, 1376260, 805306374, 7, 1376260, 1342177286, 65542, 1376260, 1342177286, 131077, 1376260, 1342177286, 131072, 1310724, 1342177285, 65536, 1245188, 805306374, 131075, 1245188, 1610612742, 65538, 1245188, 1610612742)
+
+[node name="goal" parent="." instance=ExtResource("3_xvg1q")]
+position = Vector2(32, 64)
+
+[node name="player" parent="." instance=ExtResource("4_rivvh")]
+position = Vector2(256, 30)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(228, 128)
+zoom = Vector2(2.105, 2.105)
+
+[node name="bush" parent="." instance=ExtResource("5_bkmm0")]
+position = Vector2(256, 128)
+
+[node name="stone" parent="." instance=ExtResource("10_1x42g")]
+position = Vector2(192, 128)
+
+[node name="fire_flower" parent="." instance=ExtResource("7_e7ax4")]
+position = Vector2(64, 128)
+
+[node name="ice_bridge" parent="." instance=ExtResource("8_vu5v8")]
+position = Vector2(128, 128)
+
+[node name="cauldron" parent="." instance=ExtResource("7_82ocu")]
+position = Vector2(224, 58)
+
+[node name="ice_flower" parent="." instance=ExtResource("9_cj75r")]
+position = Vector2(224, 128)
+
+[node name="spikes" parent="." instance=ExtResource("13_h7j65")]
+position = Vector2(34, 91)
+
+[node name="sidebar" parent="." instance=ExtResource("11_cy8cc")]

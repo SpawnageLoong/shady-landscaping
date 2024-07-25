@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://os1xag65gn5b"]
+
+[ext_resource type="Script" path="res://Objects/water_gatherable.gd" id="1_pjskd"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="2_b0cgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoowk"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74ug4"]
+size = Vector2(8, 8)
+
+[node name="water_gatherable" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_pjskd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hoowk")
+
+[node name="interaction_area" parent="." instance=ExtResource("2_b0cgq")]
+action_name = "freeze"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_74ug4")

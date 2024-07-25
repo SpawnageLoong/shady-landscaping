@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://e7pmabjutupx"]
+
+[ext_resource type="Script" path="res://level_select_button.gd" id="1_y45v8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg3ur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er38b"]
+
+[node name="level_select_button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_yg3ur")
+texture_pressed = SubResource("AtlasTexture_er38b")
+script = ExtResource("1_y45v8")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

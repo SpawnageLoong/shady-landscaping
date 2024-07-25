@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c438e7n2v06kr"]
+
+[ext_resource type="PackedScene" uid="uid://gbmgi8uods8c" path="res://Characters/character.tscn" id="1_2art2"]
+[ext_resource type="PackedScene" uid="uid://q56phouwotbi" path="res://Maps/test_tilemap.tscn" id="1_27pxq"]
+[ext_resource type="PackedScene" uid="uid://ccdt7t3npm1g4" path="res://Objects/stone.tscn" id="2_0eojy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_2art2")]
+position = Vector2(48, 48)
+
+[node name="Stone" parent="." instance=ExtResource("2_0eojy")]
+position = Vector2(144, 112)
+
+[node name="test-tilemap" parent="." instance=ExtResource("1_27pxq")]
+
+[node name="Stone2" parent="." instance=ExtResource("2_0eojy")]
+position = Vector2(112, 144)

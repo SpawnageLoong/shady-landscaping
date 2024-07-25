@@ -1,0 +1,141 @@
+[gd_scene load_steps=21 format=3 uid="uid://b2y4g8onupokq"]
+
+[ext_resource type="Script" path="res://Objects/fire_flower.gd" id="1_bmd2a"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="1_lq2nc"]
+[ext_resource type="Texture2D" uid="uid://dbvbyktwya3sy" path="res://Art/Pixel Mushrooms/mushrooms_objects.png" id="3_75yiq"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="4_jatpa"]
+[ext_resource type="PackedScene" uid="uid://d4cgodc4kpknp" path="res://Objects/shadow_detector.tscn" id="4_svvoy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8iry"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wofko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwkt"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcefn"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u630l"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52802"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xke8y"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_404l4"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eukev"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mygqc"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy7nm"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpcdx"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssmer"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4hmq"]
+atlas = ExtResource("3_75yiq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpp5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbwkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcefn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u630l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52802")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xke8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_404l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eukev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mygqc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy7nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpcdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssmer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4hmq")
+}],
+"loop": false,
+"name": &"shrink",
+"speed": 5.0
+}]
+
+[node name="fire_flower" type="StaticBody2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_bmd2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t8iry")
+
+[node name="interaction_area" parent="." instance=ExtResource("1_lq2nc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_wofko")
+
+[node name="shadow_detector" parent="." instance=ExtResource("4_svvoy")]
+visible = false
+
+[node name="shadow_manager" parent="." instance=ExtResource("4_jatpa")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fpp5p")
+animation = &"idle"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

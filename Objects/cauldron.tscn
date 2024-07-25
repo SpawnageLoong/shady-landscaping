@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://duraukw71iulu"]
+
+[ext_resource type="Script" path="res://Objects/cauldron.gd" id="1_l6w03"]
+[ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="2_xku0h"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="3_0o6hx"]
+[ext_resource type="Texture2D" uid="uid://md62ud8jerxv" path="res://Art/Original Assets/cauldron.png" id="4_uc34v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odu6d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmd6l"]
+size = Vector2(16, 16)
+
+[node name="cauldron" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_l6w03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_odu6d")
+
+[node name="interaction_area" parent="." instance=ExtResource("2_xku0h")]
+action_name = "craft"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+visible = false
+shape = SubResource("RectangleShape2D_wmd6l")
+
+[node name="shadow_manager" parent="." instance=ExtResource("3_0o6hx")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+texture = ExtResource("4_uc34v")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b366nsel2a6cd"]
+
+[ext_resource type="Script" path="res://Objects/hole.gd" id="1_jqmtr"]
+[ext_resource type="Texture2D" uid="uid://bpiukqn8f7ody" path="res://Art/Original Assets/hole.png" id="2_3ccap"]
+[ext_resource type="PackedScene" uid="uid://ce1fh5p5uecpk" path="res://Objects/area_detection_area.tscn" id="3_2mptl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab07k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyphw"]
+size = Vector2(16, 16)
+
+[node name="hole" type="StaticBody2D" groups=["objects"]]
+z_index = -5
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_jqmtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_3ccap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ab07k")
+
+[node name="carpet_detection_area" parent="." instance=ExtResource("3_2mptl")]
+target_area_name = "carpet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carpet_detection_area"]
+shape = SubResource("RectangleShape2D_jyphw")
