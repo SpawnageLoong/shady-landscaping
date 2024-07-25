@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://sp6q3vb4bbqn"]
+
+[ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="1_cxq1c"]
+[ext_resource type="PackedScene" uid="uid://ctta0f0jc65x4" path="res://Objects/bush.tscn" id="2_oqyp8"]
+[ext_resource type="PackedScene" uid="uid://lumaak7hxhjk" path="res://Objects/ice_flower.tscn" id="3_o05b4"]
+[ext_resource type="PackedScene" uid="uid://b2y4g8onupokq" path="res://Objects/fire_flower.tscn" id="4_t564y"]
+[ext_resource type="PackedScene" uid="uid://gbmgi8uods8c" path="res://Characters/player.tscn" id="5_hlswm"]
+[ext_resource type="PackedScene" uid="uid://ccfcwh1ns8k53" path="res://Objects/spikes.tscn" id="6_iukmv"]
+
+[node name="cover_image_map" type="Node2D"]
+
+[node name="template_tilemap" parent="." instance=ExtResource("1_cxq1c")]
+
+[node name="bush" parent="." instance=ExtResource("2_oqyp8")]
+position = Vector2(192, 191)
+
+[node name="ice_flower" parent="." instance=ExtResource("3_o05b4")]
+position = Vector2(64, 192)
+
+[node name="fire_flower" parent="." instance=ExtResource("4_t564y")]
+position = Vector2(128, 160)
+
+[node name="player" parent="." instance=ExtResource("5_hlswm")]
+position = Vector2(160, 128)
+
+[node name="spikes" parent="." instance=ExtResource("6_iukmv")]
+position = Vector2(226, 162)
