@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bapnnb7e50l6y"]
+[gd_scene load_steps=47 format=3 uid="uid://bapnnb7e50l6y"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ysunk"]
 [ext_resource type="PackedScene" uid="uid://b55077ix48gnr" path="res://Levels/demo_level.tscn" id="2_orgki"]
@@ -89,6 +89,70 @@ region = Rect2(54, 34, 26, 16)
 atlas = ExtResource("8_qu8tt")
 region = Rect2(81, 34, 26, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_30eyf"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(0, 85, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q55m5"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(27, 85, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8vqk"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(0, 102, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7snyf"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(27, 102, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5weiw"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(0, 119, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mujv5"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(27, 119, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nvkb"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(54, 85, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6er3e"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(81, 85, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j04ue"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(54, 102, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrsj4"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(81, 102, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00vdb"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(54, 119, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5ubl"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(82, 119, 25, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqmr7"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(0, 170, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3tqs"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(27, 170, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhs3f"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(0, 187, 26, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g35pk"]
+atlas = ExtResource("8_qu8tt")
+region = Rect2(27, 187, 26, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppoji"]
 atlas = ExtResource("8_qu8tt")
 region = Rect2(0, 255, 53, 16)
@@ -128,7 +192,7 @@ offset_top = -26.0
 offset_right = 111.0
 offset_bottom = -7.0
 grow_vertical = 0
-text = "Tech Demo 2"
+text = "Game Jam v1"
 label_settings = SubResource("LabelSettings_ir7em")
 horizontal_alignment = 1
 
@@ -262,6 +326,86 @@ offset_bottom = 45.3333
 texture_normal = SubResource("AtlasTexture_qxicy")
 texture_pressed = SubResource("AtlasTexture_aukbb")
 scene_path = "res://Levels/level_2_3.tscn"
+
+[node name="level_select_button9" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 47.6667
+offset_right = 36.0
+offset_bottom = 63.6667
+texture_normal = SubResource("AtlasTexture_30eyf")
+texture_pressed = SubResource("AtlasTexture_q55m5")
+scene_path = "res://Levels/level_3_1.tscn"
+
+[node name="level_select_button10" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 48.0
+offset_right = 65.0
+offset_bottom = 64.0
+texture_normal = SubResource("AtlasTexture_t8vqk")
+texture_pressed = SubResource("AtlasTexture_7snyf")
+scene_path = "res://Levels/level_3_2.tscn"
+
+[node name="level_select_button11" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 48.0
+offset_right = 94.0
+offset_bottom = 64.0
+texture_normal = SubResource("AtlasTexture_5weiw")
+texture_pressed = SubResource("AtlasTexture_mujv5")
+scene_path = "res://Levels/level_3_3.tscn"
+
+[node name="level_select_button12" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 67.0
+offset_right = 36.0
+offset_bottom = 83.0
+texture_normal = SubResource("AtlasTexture_2nvkb")
+texture_pressed = SubResource("AtlasTexture_6er3e")
+scene_path = "res://Levels/level_4_1.tscn"
+
+[node name="level_select_button13" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 67.0
+offset_right = 65.0
+offset_bottom = 83.0
+texture_normal = SubResource("AtlasTexture_j04ue")
+texture_pressed = SubResource("AtlasTexture_qrsj4")
+scene_path = "res://Levels/level_4_2.tscn"
+
+[node name="level_select_button14" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 67.6667
+offset_top = 67.0
+offset_right = 93.6667
+offset_bottom = 83.0
+texture_normal = SubResource("AtlasTexture_00vdb")
+texture_pressed = SubResource("AtlasTexture_o5ubl")
+scene_path = "res://Levels/level_4_3.tscn"
+
+[node name="level_select_button15" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 86.0
+offset_right = 36.0
+offset_bottom = 102.0
+texture_normal = SubResource("AtlasTexture_wqmr7")
+texture_pressed = SubResource("AtlasTexture_t3tqs")
+scene_path = "res://Levels/level_5_1.tscn"
+
+[node name="level_select_button16" parent="level_select/bg" instance=ExtResource("7_l4gvv")]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 85.6667
+offset_right = 65.0
+offset_bottom = 101.667
+texture_normal = SubResource("AtlasTexture_mhs3f")
+texture_pressed = SubResource("AtlasTexture_g35pk")
+scene_path = "res://Levels/level_5_2.tscn"
 
 [node name="back_button" type="TextureButton" parent="level_select/bg"]
 layout_mode = 0

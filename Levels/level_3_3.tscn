@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqfhdi73jhraa"]
+
+[ext_resource type="Script" path="res://Levels/level_3_2.gd" id="1_0kxgt"]
+[ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="2_lqwk0"]
+[ext_resource type="PackedScene" uid="uid://u0gohqlobfgw" path="res://Objects/goal.tscn" id="3_m42on"]
+[ext_resource type="PackedScene" uid="uid://gbmgi8uods8c" path="res://Characters/player.tscn" id="4_b2um1"]
+[ext_resource type="PackedScene" uid="uid://ccdt7t3npm1g4" path="res://Objects/stone.tscn" id="5_nq1cr"]
+[ext_resource type="PackedScene" uid="uid://bj18ea2bs7rxd" path="res://Objects/lamp_linker.tscn" id="6_1dmdf"]
+[ext_resource type="PackedScene" uid="uid://b2vgkafbelyvf" path="res://Objects/linked_lamp.tscn" id="7_nmq7b"]
+[ext_resource type="PackedScene" uid="uid://hsaorjv2fe00" path="res://UI/sidebar.tscn" id="8_4su5c"]
+[ext_resource type="PackedScene" uid="uid://b366nsel2a6cd" path="res://Objects/hole.tscn" id="9_hi43e"]
+[ext_resource type="PackedScene" uid="uid://77gdaxwl32l4" path="res://Objects/carpet.tscn" id="10_ca887"]
+[ext_resource type="PackedScene" uid="uid://ccfcwh1ns8k53" path="res://Objects/spikes.tscn" id="11_tvpl0"]
+
+[node name="level_3_3" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_0kxgt")
+level_name = "Level 3-3"
+
+[node name="template_tilemap" parent="." instance=ExtResource("2_lqwk0")]
+layer_1/tile_data = PackedInt32Array()
+layer_3/tile_data = PackedInt32Array(327681, 65540, 28, 393217, 65540, 1, 327682, 262148, 6, 393218, 131076, 1, 458753, 65540, 30, 524289, 1376260, 2, 458754, 131076, 36, 524290, 131076, 32, 393219, 65540, 1, 458755, 327684, 4, 393220, 131076, 1, 393221, 65540, 1, 327684, 131076, 34, 327685, 131076, 28, 327687, 131076, 28, 458757, 131076, 30, 458759, 131076, 30, 458756, 131076, 36, 458758, 131076, 36, 458760, 131076, 36, 327686, 131076, 34, 327688, 131076, 34, 393222, 131076, 29, 458761, 196612, 30, 327689, 196612, 28, 393223, 65540, 1, 393225, 65540, 1, 393224, 131076, 1, 524297, 1245188, 2, 524291, 720900, 3, 524292, 720900, 3, 524293, 720900, 3, 524294, 720900, 3, 524295, 720900, 3, 524296, 720900, 3, 458752, 1310724, 1879048194, 458762, 1310724, 1610612738, 524288, 1376260, 6, 524298, 1376260, 1610612742, 393226, 1376260, 805306374, 393216, 1376260, 536870918, 131073, 1310724, 1342177282, 65538, 327684, 6, 131074, 65540, 30, 65539, 131076, 1, 131075, 65540, 1, 196611, 65540, 29, 65540, 65540, 1, 131076, 131076, 1, 196612, 196612, 36, 262147, 4, 6, 262148, 1441796, 2, 131077, 262148, 5, 196613, 131076, 32, 262149, 1310724, 2, 327683, 131076, 1, 131079, 262148, 5, 3, 262148, 6, 5, 262148, 6, 7, 262148, 6, 65542, 65540, 1, 65544, 65540, 1, 65541, 131076, 1, 65543, 131076, 1, 131078, 327684, 4, 6, 262148, 3, 4, 262148, 3, 2, 65540, 28, 8, 196612, 28, 131080, 196612, 30, 196614, 131076, 32, 196615, 131076, 32, 196616, 1245188, 2, 262150, 1310724, 2, 262151, 1310724, 2, 131081, 1310724, 1610612738, 262152, 1245188, 6, 65545, 1245188, 1610612742, 65537, 1376260, 1342177286, 196610, 1376260, 2, 262146, 1310724, 1342177282, 196609, 1376260, 6)
+
+[node name="goal" parent="." instance=ExtResource("3_m42on")]
+position = Vector2(64, 32)
+next_scene = "res://Levels/level_4_1.tscn"
+
+[node name="player" parent="." instance=ExtResource("4_b2um1")]
+position = Vector2(289, 191)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(228, 128)
+zoom = Vector2(2.105, 2.105)
+
+[node name="stone" parent="." instance=ExtResource("5_nq1cr")]
+position = Vector2(128, 189)
+
+[node name="lamp_linker" parent="." instance=ExtResource("6_1dmdf")]
+
+[node name="linked_lamp_2" parent="lamp_linker" instance=ExtResource("7_nmq7b")]
+position = Vector2(96, 218)
+
+[node name="linked_lamp_1" parent="lamp_linker" instance=ExtResource("7_nmq7b")]
+position = Vector2(225, 28)
+
+[node name="sidebar" parent="." instance=ExtResource("8_4su5c")]
+
+[node name="stone3" parent="." instance=ExtResource("5_nq1cr")]
+position = Vector2(159, -2)
+
+[node name="stone2" parent="." instance=ExtResource("5_nq1cr")]
+position = Vector2(160, 29)
+
+[node name="hole" parent="." instance=ExtResource("9_hi43e")]
+position = Vector2(96, 32)
+
+[node name="carpet" parent="." instance=ExtResource("10_ca887")]
+position = Vector2(128, 32)
+
+[node name="spikes" parent="." instance=ExtResource("11_tvpl0")]
+position = Vector2(96, 161)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://waul5lmbd1n4"]
+[gd_scene load_steps=8 format=3 uid="uid://waul5lmbd1n4"]
 
 [ext_resource type="Script" path="res://Objects/advance_time_object.gd" id="1_b0bny"]
 [ext_resource type="Texture2D" uid="uid://bykf6vbjy0p2e" path="res://Art/Temporary Assets/stone.png" id="2_jquxu"]
 [ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="3_0mitu"]
-[ext_resource type="PackedScene" uid="uid://cgvl13j3w3swv" path="res://Objects/shadow_area.tscn" id="4_nusv2"]
+[ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="3_brfpm"]
+[ext_resource type="AudioStream" uid="uid://q7ib4ahw76e4" path="res://Audio/interact.wav" id="5_qnrfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab07k"]
 size = Vector2(28, 28)
@@ -23,6 +24,8 @@ texture = ExtResource("2_jquxu")
 visible = false
 shape = SubResource("RectangleShape2D_ab07k")
 
+[node name="shadow_manager" parent="." instance=ExtResource("3_brfpm")]
+
 [node name="interaction_area" parent="." instance=ExtResource("3_0mitu")]
 action_name = "advance time"
 
@@ -30,17 +33,5 @@ action_name = "advance time"
 visible = false
 shape = SubResource("RectangleShape2D_ajl2g")
 
-[node name="shadow_area_left" parent="." instance=ExtResource("4_nusv2")]
-visible = false
-rotation = 1.5708
-
-[node name="shadow_area_right" parent="." instance=ExtResource("4_nusv2")]
-visible = false
-rotation = -1.5708
-
-[node name="shadow_area_up" parent="." instance=ExtResource("4_nusv2")]
-visible = false
-rotation = 3.14159
-
-[node name="shadow_area_down" parent="." instance=ExtResource("4_nusv2")]
-visible = false
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qnrfn")

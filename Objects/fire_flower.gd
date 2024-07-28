@@ -6,6 +6,7 @@ extends StaticBody2D
 @onready var interaction_area: InteractionArea = $interaction_area
 @onready var interaction_collision_shape: CollisionShape2D = $interaction_area/CollisionShape2D
 @onready var shadows: Node2D = $shadow_manager
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
 var is_open: bool = true
 
@@ -39,7 +40,9 @@ func _on_interact():
 
 func pickup():
 	PlayerVariables.player_material = "fire_flower"
-	self.queue_free()
+	sound.play()
+	sprite.visible = false
+	collision_shape.disabled = true
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -48,3 +51,7 @@ func _on_animated_sprite_2d_animation_finished():
 		shadows.enable()
 	else:
 		shadows.disable()
+
+
+func _on_audio_stream_player_finished():
+	self.queue_free()

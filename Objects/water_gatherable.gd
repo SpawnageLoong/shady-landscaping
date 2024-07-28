@@ -3,6 +3,7 @@ extends StaticBody2D
 @onready var interaction_area: InteractionArea = $interaction_area
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var interaction_collision_shape: CollisionShape2D = $interaction_area/CollisionShape2D
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready():
@@ -16,4 +17,5 @@ func _on_interact():
 
 
 func get_water():
+	sound.play()
 	PlayerVariables.has_water = true

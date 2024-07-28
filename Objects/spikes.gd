@@ -2,14 +2,14 @@ extends StaticBody2D
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var shadow_detector: Area2D = $shadow_detection_area
+@onready var shadow_detector: Node2D = $shadow_detector
 @onready var shadows: Node2D = $shadow_manager
 
 var is_grown: bool = false
 var in_animation: bool = false
 
 func _process(_delta):
-	if shadow_detector.area_detected:
+	if shadow_detector.in_shadow:
 		if is_grown:
 			is_grown = false
 			in_animation = true

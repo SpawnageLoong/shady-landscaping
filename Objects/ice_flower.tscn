@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://lumaak7hxhjk"]
+[gd_scene load_steps=22 format=3 uid="uid://lumaak7hxhjk"]
 
 [ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="1_g5sng"]
 [ext_resource type="Script" path="res://Objects/ice_flower.gd" id="1_ymxw6"]
 [ext_resource type="Texture2D" uid="uid://dbvbyktwya3sy" path="res://Art/Pixel Mushrooms/mushrooms_objects.png" id="2_it6mt"]
 [ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="4_kvjiw"]
 [ext_resource type="PackedScene" uid="uid://d4cgodc4kpknp" path="res://Objects/shadow_detector.tscn" id="6_dbg1j"]
+[ext_resource type="AudioStream" uid="uid://q7ib4ahw76e4" path="res://Audio/interact.wav" id="6_dps72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohe5m"]
 size = Vector2(30, 30)
@@ -139,4 +140,8 @@ sprite_frames = SubResource("SpriteFrames_uoijl")
 animation = &"idle"
 frame_progress = 0.509313
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dps72")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

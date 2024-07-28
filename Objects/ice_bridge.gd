@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var interaction_collision_shape: CollisionShape2D = $interaction_area/CollisionShape2D
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
 var is_frozen = false
 
@@ -23,6 +24,7 @@ func _on_interact():
 
 
 func freeze():
+	sound.play()
 	sprite.visible = true
 	collision_shape.disabled = true
 	interaction_collision_shape.disabled = true
@@ -30,4 +32,5 @@ func freeze():
 
 
 func get_water():
+	sound.play()
 	PlayerVariables.has_water = true

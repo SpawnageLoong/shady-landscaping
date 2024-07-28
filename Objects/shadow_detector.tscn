@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ce1fh5p5uecpk" path="res://Objects/area_detection_area.tscn" id="2_w3d3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rg4h"]
-size = Vector2(8, 8)
+size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihcu7"]
-size = Vector2(8, 8)
+size = Vector2(12, 12)
 
 [node name="shadow_detector" type="Node2D"]
 script = ExtResource("1_7iblw")

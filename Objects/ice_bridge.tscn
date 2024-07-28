@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b43oycmrnl47u"]
+[gd_scene load_steps=7 format=3 uid="uid://b43oycmrnl47u"]
 
 [ext_resource type="Script" path="res://Objects/ice_bridge.gd" id="1_pq6mp"]
 [ext_resource type="Texture2D" uid="uid://cjx4yuj0q7yhi" path="res://Art/Original Assets/ice.png" id="2_bmhkk"]
 [ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="2_bp1f8"]
+[ext_resource type="AudioStream" uid="uid://q7ib4ahw76e4" path="res://Audio/interact.wav" id="4_i7361"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pdxq"]
 size = Vector2(16, 16)
@@ -30,3 +31,6 @@ action_name = "freeze"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
 visible = false
 shape = SubResource("RectangleShape2D_e8wx7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i7361")

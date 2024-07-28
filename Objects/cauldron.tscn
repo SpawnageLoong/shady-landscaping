@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://duraukw71iulu"]
+[gd_scene load_steps=8 format=3 uid="uid://duraukw71iulu"]
 
 [ext_resource type="Script" path="res://Objects/cauldron.gd" id="1_l6w03"]
 [ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="2_xku0h"]
 [ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="3_0o6hx"]
 [ext_resource type="Texture2D" uid="uid://md62ud8jerxv" path="res://Art/Original Assets/cauldron.png" id="4_uc34v"]
+[ext_resource type="AudioStream" uid="uid://q7ib4ahw76e4" path="res://Audio/interact.wav" id="5_puo7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odu6d"]
 size = Vector2(16, 16)
@@ -33,3 +34,6 @@ shape = SubResource("RectangleShape2D_wmd6l")
 y_sort_enabled = true
 scale = Vector2(2, 2)
 texture = ExtResource("4_uc34v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_puo7e")

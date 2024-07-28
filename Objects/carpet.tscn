@@ -127,7 +127,6 @@ collision_mask = 7
 script = ExtResource("1_q7688")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_mqevb")
 
 [node name="carpet_area" parent="." instance=ExtResource("2_n6w0b")]
@@ -138,7 +137,6 @@ position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_0r7r6")
 
 [node name="shadow_detector" parent="." instance=ExtResource("5_pgexl")]
-visible = false
 
 [node name="shadow_manager" parent="." instance=ExtResource("4_prgd1")]
 

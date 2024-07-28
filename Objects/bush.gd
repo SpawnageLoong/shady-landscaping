@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var interaction_collision_area: CollisionShape2D = $interaction_area/CollisionShape2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shadows: Node2D = $shadow_manager
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
 var is_burning: bool = false
 
@@ -23,6 +24,7 @@ func _on_interact():
 
 
 func burn():
+	sound.play()
 	PlayerVariables.player_potion = null
 	is_burning = true
 	sprite.play("burning")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2vgkafbelyvf"]
+[gd_scene load_steps=15 format=3 uid="uid://b2vgkafbelyvf"]
 
 [ext_resource type="Script" path="res://Objects/linked_lamp.gd" id="1_6lpm7"]
 [ext_resource type="Texture2D" uid="uid://bcn2khk820twh" path="res://Art/Original Assets/Lamp.png" id="2_3bclc"]
 [ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="3_ej58w"]
 [ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="4_x5ycd"]
 [ext_resource type="PackedScene" uid="uid://6b4gnqagoxba" path="res://Objects/light_area.tscn" id="5_o8doj"]
+[ext_resource type="AudioStream" uid="uid://q7ib4ahw76e4" path="res://Audio/interact.wav" id="6_16b8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nijh"]
 
@@ -101,4 +102,7 @@ frame_progress = 1.0
 [node name="RayCast2D" type="RayCast2D" parent="."]
 rotation = 1.5708
 target_position = Vector2(0, 480)
-collision_mask = 5
+collision_mask = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_16b8f")

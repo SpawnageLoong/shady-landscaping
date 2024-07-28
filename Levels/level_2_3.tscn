@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dg4umarm0p6rn"]
+[gd_scene load_steps=14 format=3 uid="uid://dg4umarm0p6rn"]
 
 [ext_resource type="Script" path="res://Levels/level_2_3.gd" id="1_018th"]
 [ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="2_u6jdu"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ccdt7t3npm1g4" path="res://Objects/stone.tscn" id="10_1x42g"]
 [ext_resource type="PackedScene" uid="uid://hsaorjv2fe00" path="res://UI/sidebar.tscn" id="11_cy8cc"]
 [ext_resource type="PackedScene" uid="uid://ccfcwh1ns8k53" path="res://Objects/spikes.tscn" id="13_h7j65"]
+[ext_resource type="PackedScene" uid="uid://os1xag65gn5b" path="res://Objects/water_gatherable.tscn" id="13_tr6ca"]
 
 [node name="level_2_3" type="Node2D"]
 y_sort_enabled = true
@@ -24,6 +25,7 @@ layer_3/tile_data = PackedInt32Array(262145, 458756, 1, 262146, 327684, 1, 26214
 
 [node name="goal" parent="." instance=ExtResource("3_xvg1q")]
 position = Vector2(32, 64)
+next_scene = "res://Levels/level_3_1.tscn"
 
 [node name="player" parent="." instance=ExtResource("4_rivvh")]
 position = Vector2(256, 30)
@@ -54,3 +56,81 @@ position = Vector2(224, 128)
 position = Vector2(34, 91)
 
 [node name="sidebar" parent="." instance=ExtResource("11_cy8cc")]
+
+[node name="water_gatherable" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(160, 160)
+
+[node name="water_gatherable2" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(192, 160)
+
+[node name="water_gatherable3" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(256, 0)
+
+[node name="water_gatherable4" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(288, 0)
+
+[node name="water_gatherable5" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 32)
+
+[node name="water_gatherable6" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 64)
+
+[node name="water_gatherable7" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 96)
+
+[node name="water_gatherable8" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 128)
+
+[node name="water_gatherable9" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 160)
+
+[node name="water_gatherable10" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 192)
+
+[node name="water_gatherable11" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(320, 224)
+
+[node name="water_gatherable12" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(288, 256)
+
+[node name="water_gatherable13" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(256, 256)
+
+[node name="water_gatherable14" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(224, 256)
+
+[node name="water_gatherable15" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(192, 192)
+
+[node name="water_gatherable16" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(160, 192)
+
+[node name="water_gatherable17" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(128, 192)
+
+[node name="water_gatherable18" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(0, 96)
+
+[node name="water_gatherable19" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(0, 128)
+
+[node name="water_gatherable20" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(32, 192)
+
+[node name="water_gatherable21" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(32, 224)
+
+[node name="water_gatherable22" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(192, 256)
+
+[node name="water_gatherable23" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(160, 256)
+
+[node name="water_gatherable24" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(128, 256)
+
+[node name="water_gatherable25" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(96, 256)
+
+[node name="water_gatherable26" parent="." instance=ExtResource("13_tr6ca")]
+position = Vector2(64, 256)

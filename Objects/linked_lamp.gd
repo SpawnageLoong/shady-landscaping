@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var interaction_area: InteractionArea = $interaction_area
 @onready var ray: RayCast2D = $RayCast2D
 @onready var shadows: Node2D = $shadow_manager
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
 @onready var light_left: Area2D = $light_area_left
 @onready var light_right: Area2D = $light_area_right
@@ -32,6 +33,7 @@ func _on_interact():
 			print("extinguishing lamp")
 			is_ignited = false
 			sprite.play("default")
+			sound.play()
 			PlayerVariables.player_potion = null
 		else:
 			print("rotating lamp")
@@ -41,12 +43,16 @@ func _on_interact():
 			print("igniting lamp")
 			is_ignited = true
 			sprite.play("idle_lit")
+			sound.play()
 			PlayerVariables.player_potion = null
 		else:
 			print("no fire potion")
 
 
 func rotate_lamp():
+	if !is_ignited:
+		return
+	sound.play()
 	if lamp_direction == "left":
 		lamp_direction = "up"
 		ray.rotation_degrees = 180

@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://3yxnmi8rgo4r"]
+
+[ext_resource type="Script" path="res://Levels/level_3_2.gd" id="1_u1lyu"]
+[ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="2_qlhbo"]
+[ext_resource type="PackedScene" uid="uid://u0gohqlobfgw" path="res://Objects/goal.tscn" id="3_qf61n"]
+[ext_resource type="PackedScene" uid="uid://gbmgi8uods8c" path="res://Characters/player.tscn" id="4_x7vc3"]
+[ext_resource type="PackedScene" uid="uid://ccdt7t3npm1g4" path="res://Objects/stone.tscn" id="5_xxotf"]
+[ext_resource type="PackedScene" uid="uid://bj18ea2bs7rxd" path="res://Objects/lamp_linker.tscn" id="7_tccmg"]
+[ext_resource type="PackedScene" uid="uid://b2vgkafbelyvf" path="res://Objects/linked_lamp.tscn" id="8_dw65s"]
+[ext_resource type="PackedScene" uid="uid://b366nsel2a6cd" path="res://Objects/hole.tscn" id="9_r5jxk"]
+[ext_resource type="PackedScene" uid="uid://hsaorjv2fe00" path="res://UI/sidebar.tscn" id="9_ysb72"]
+[ext_resource type="PackedScene" uid="uid://77gdaxwl32l4" path="res://Objects/carpet.tscn" id="10_tk1r2"]
+
+[node name="level_3_2" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_u1lyu")
+level_name = "Level 3-2"
+
+[node name="template_tilemap" parent="." instance=ExtResource("2_qlhbo")]
+layer_1/tile_data = PackedInt32Array()
+layer_3/tile_data = PackedInt32Array(327681, 65540, 28, 393217, 65540, 1, 327682, 262148, 6, 393218, 131076, 1, 458753, 65540, 30, 524289, 1376260, 2, 458754, 131076, 36, 524290, 131076, 32, 393219, 65540, 1, 458755, 327684, 4, 393220, 131076, 1, 393221, 65540, 1, 327684, 131076, 34, 327685, 131076, 28, 327687, 131076, 28, 458757, 131076, 30, 458759, 131076, 30, 458756, 131076, 36, 458758, 131076, 36, 458760, 131076, 36, 327686, 131076, 34, 327688, 131076, 34, 393222, 131076, 29, 458761, 196612, 30, 327689, 196612, 28, 393223, 65540, 1, 393225, 65540, 1, 393224, 131076, 1, 524297, 1245188, 2, 524291, 720900, 3, 524292, 720900, 3, 524293, 720900, 3, 524294, 720900, 3, 524295, 720900, 3, 524296, 720900, 3, 458752, 1310724, 1879048194, 458762, 1310724, 1610612738, 524288, 1376260, 6, 524298, 1376260, 1610612742, 393226, 1376260, 805306374, 393216, 1376260, 536870918, 131073, 1376260, 536870918, 196609, 1310724, 1879048194, 65538, 65540, 34, 131074, 65540, 35, 196610, 65540, 36, 65539, 131076, 34, 131075, 65540, 1, 196611, 131076, 1, 65540, 196612, 34, 131076, 196612, 35, 196612, 196612, 36, 262145, 1376260, 6, 262146, 1376260, 2, 262147, 4, 6, 262148, 1441796, 2, 131077, 1376260, 805306374, 196613, 1310724, 1610612738, 262149, 1376260, 1610612742, 327683, 131076, 1)
+
+[node name="goal" parent="." instance=ExtResource("3_qf61n")]
+position = Vector2(32, 192)
+next_scene = "res://Levels/level_3_3.tscn"
+
+[node name="player" parent="." instance=ExtResource("4_x7vc3")]
+position = Vector2(289, 191)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(228, 128)
+zoom = Vector2(2.105, 2.105)
+
+[node name="stone" parent="." instance=ExtResource("5_xxotf")]
+position = Vector2(96, 160)
+
+[node name="lamp_linker" parent="." instance=ExtResource("7_tccmg")]
+
+[node name="linked_lamp_2" parent="lamp_linker" instance=ExtResource("8_dw65s")]
+position = Vector2(256, 160)
+
+[node name="linked_lamp_1" parent="lamp_linker" instance=ExtResource("8_dw65s")]
+position = Vector2(96, 64)
+
+[node name="sidebar" parent="." instance=ExtResource("9_ysb72")]
+
+[node name="stone2" parent="." instance=ExtResource("5_xxotf")]
+position = Vector2(128, 192)
+
+[node name="hole" parent="." instance=ExtResource("9_r5jxk")]
+position = Vector2(64, 192)
+
+[node name="carpet" parent="." instance=ExtResource("10_tk1r2")]
+position = Vector2(95, 192)

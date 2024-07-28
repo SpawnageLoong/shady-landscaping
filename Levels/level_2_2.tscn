@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckfbml4y28fl3"]
+[gd_scene load_steps=12 format=3 uid="uid://ckfbml4y28fl3"]
 
 [ext_resource type="Script" path="res://Levels/level_2_2.gd" id="1_w0wtp"]
 [ext_resource type="PackedScene" uid="uid://daguhu2cmd4sn" path="res://Templates/template_tilemap.tscn" id="2_8dp4f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://duraukw71iulu" path="res://Objects/cauldron.tscn" id="8_exo4p"]
 [ext_resource type="PackedScene" uid="uid://b43oycmrnl47u" path="res://Objects/ice_bridge.tscn" id="8_i7klc"]
 [ext_resource type="PackedScene" uid="uid://lumaak7hxhjk" path="res://Objects/ice_flower.tscn" id="10_2hg3v"]
+[ext_resource type="PackedScene" uid="uid://os1xag65gn5b" path="res://Objects/water_gatherable.tscn" id="11_htk57"]
 [ext_resource type="PackedScene" uid="uid://ccdt7t3npm1g4" path="res://Objects/stone.tscn" id="11_mwifj"]
 
 [node name="level_2_2" type="Node2D"]
@@ -46,3 +47,36 @@ position = Vector2(192, 130)
 position = Vector2(256, 96)
 
 [node name="sidebar" parent="." instance=ExtResource("5_1rdil")]
+
+[node name="water_gatherable" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(64, 192)
+
+[node name="water_gatherable2" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(32, 192)
+
+[node name="water_gatherable3" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(64, 64)
+
+[node name="water_gatherable4" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(32, 64)
+
+[node name="water_gatherable5" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(128, 160)
+
+[node name="water_gatherable6" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(128, 192)
+
+[node name="water_gatherable7" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(128, 96)
+
+[node name="water_gatherable8" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(192, 0)
+
+[node name="water_gatherable9" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(192, 256)
+
+[node name="water_gatherable10" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(224, 256)
+
+[node name="water_gatherable11" parent="." instance=ExtResource("11_htk57")]
+position = Vector2(256, 256)

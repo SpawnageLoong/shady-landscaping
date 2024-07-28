@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctta0f0jc65x4"]
+[gd_scene load_steps=15 format=3 uid="uid://ctta0f0jc65x4"]
 
 [ext_resource type="Script" path="res://Objects/bush.gd" id="1_e8pb7"]
 [ext_resource type="Texture2D" uid="uid://3ss0uvrhbjvw" path="res://Art/World of Solaria Demo Pack Update 04/16x16/Tilesets/New/Bush.png" id="2_2b4h3"]
 [ext_resource type="PackedScene" uid="uid://cnmjcmacwy81p" path="res://Objects/shadow_manager.tscn" id="3_ulico"]
 [ext_resource type="PackedScene" uid="uid://dwr8yl8hr8xas" path="res://Objects/interaction_area.tscn" id="3_v2bux"]
+[ext_resource type="AudioStream" uid="uid://q7ib4ahw76e4" path="res://Audio/interact.wav" id="5_8dj23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10qjm"]
 size = Vector2(30, 30)
@@ -110,5 +111,8 @@ shape = SubResource("RectangleShape2D_dq32a")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4qod4")
 animation = &"idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8dj23")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
